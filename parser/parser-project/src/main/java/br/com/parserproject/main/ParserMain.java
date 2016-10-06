@@ -1,5 +1,6 @@
 package br.com.parserproject.main;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import br.com.parserproject.database.postgresql.PostgreSQLComm;
@@ -17,7 +18,10 @@ public class ParserMain {
 		try {
 			PostgreSQLComm pgConn = new PostgreSQLComm();
 			
-			System.out.println(pgConn.getConn().createStatement().toString());
+			ResultSet rs = pgConn.getResultSet("select dado from auditoria where dado->>'tabela' = 'produto' LIMIT 100");
+			while(rs.next()){
+				System.out.println(rs.getString("dado"));
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
