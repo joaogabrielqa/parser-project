@@ -1,0 +1,2 @@
+INDEX VERSION 1.129+E:\Trabalhos 2016\parser-project\parser\.metadata\.plugins\org.eclipse.jdt.core
+3006499142.index
