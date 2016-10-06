@@ -12,7 +12,8 @@ public class PostgreSQLComm {
 	
 	public PostgreSQLComm() throws ClassNotFoundException, SQLException{
 		Class.forName("org.postgresql.Driver");
-		conn = DriverManager.getConnection("jdbc:postgresql://localhost:45432/datamining", "postgres", "root");
+		//conn = DriverManager.getConnection("jdbc:postgresql://localhost:45432/datamining", "postgres", "root");
+		conn = DriverManager.getConnection("jdbc:postgresql://localhost:45432/varejo", "postgres", "root");
 	}
 
 	public Connection getConn() {
