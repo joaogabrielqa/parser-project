@@ -24,7 +24,7 @@ public class ParserMain {
 			PostgreSQLComm pgConn = new PostgreSQLComm();
 			JSONParser parser = new JSONParser();
 			
-			ResultSet rs = pgConn.getResultSet("select * from aud.auditoria where dado->>'tabela' = 'produto' and dado->>'tipo' = 'novo registro'");
+			ResultSet rs = pgConn.getResultSet("select * from auditoria where dado->>'tabela' = 'produto' and dado->>'tipo' = 'novo registro' order by id_auditoria");
 			while(rs.next()){
 //				System.out.println(rs.getString("id_auditoria"));
 				Long idAuditoria = rs.getLong("id_auditoria");
