@@ -1,0 +1,7 @@
+{
+"database_name":"dinamico_erp_dev",
+"database_login":"dinamico_erp",
+"database_password":"dinamico_erp",
+"database_host":"192.168.0.26",
+"database_port":"45432"
+}

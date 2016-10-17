@@ -1,5 +1,6 @@
 package br.com.parserproject.main;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -24,7 +25,7 @@ public class ParserMain {
 			PostgreSQLComm pgConn = new PostgreSQLComm();
 			JSONParser parser = new JSONParser();
 			
-			ResultSet rs = pgConn.getResultSet("select * from auditoria where dado->>'tabela' = 'produto' and dado->>'tipo' = 'novo registro' order by id_auditoria");
+			ResultSet rs = pgConn.getResultSet("select * from aud.auditoria where dado->>'tabela' = 'produto' and dado->>'tipo' = 'novo registro' order by id_auditoria");
 			while(rs.next()){
 //				System.out.println(rs.getString("id_auditoria"));
 				Long idAuditoria = rs.getLong("id_auditoria");
@@ -49,6 +50,9 @@ public class ParserMain {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
